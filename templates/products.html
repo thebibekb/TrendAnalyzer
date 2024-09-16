@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 20 Trending {{ category }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Top 20 Trending {{ category }}</h1>
+    <ul>
+        {% for product in products %}
+        <li>
+            <p><strong>{{ product['desc'] }}</strong></p>
+            <p><a href="{{ product['URL'] }}" target="_blank">Buy Now</a></p>
+            <p>Trending Score: {{ product['trending_score'] }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

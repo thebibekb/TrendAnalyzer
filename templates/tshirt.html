@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 10 Trending T-shirts</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Top 10 Trending T-shirts</h1>
+    <ul>
+        {% for tshirt in tshirts %}
+        <li>
+            <p><strong>{{ tshirt['desc'] }}</strong></p>
+            <p><a href="{{ tshirt['URL'] }}" target="_blank">Buy Now</a></p>
+            <p>Trending Score: {{ tshirt['trending_score'] }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
